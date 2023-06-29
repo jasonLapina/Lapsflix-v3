@@ -30,15 +30,16 @@ function NavBar() {
       opacity='.7'
       _hover={{ opacity: 1 }}
       transition='all .4s'
+      zIndex={999}
     >
       <HStack gap='24px'>
-        {navItems.map((item) => (
+        {navItems.map((item, i) => (
           <Button
             _visited={{
               color: "white",
             }}
             variant='link'
-            key={item.path}
+            key={item.path + i}
             as={Link}
             href={item.path}
             fontSize='18px'
