@@ -1,5 +1,6 @@
-import { Box, Button, HStack, Text } from "@chakra-ui/react";
+import { Box, Button, HStack, Input, Text } from "@chakra-ui/react";
 import Link from "next/link";
+import Searchbar from "./Searchbar";
 function NavBar() {
   const navItems = [
     {
@@ -26,27 +27,33 @@ function NavBar() {
       left='50%'
       transform='translateX(-50%)'
       px='32px'
-      py='4px'
+      py='6px'
       opacity='.7'
       _hover={{ opacity: 1 }}
       transition='all .4s'
       zIndex={999}
+      _focusWithin={{
+        opacity: 1,
+      }}
     >
-      <HStack gap='24px'>
-        {navItems.map((item, i) => (
-          <Button
-            _visited={{
-              color: "white",
-            }}
-            variant='link'
-            key={item.path + i}
-            as={Link}
-            href={item.path}
-            fontSize='18px'
-          >
-            {item.text}
-          </Button>
-        ))}
+      <HStack justifyContent='space-between'>
+        <HStack gap='24px'>
+          {navItems.map((item, i) => (
+            <Button
+              _visited={{
+                color: "white",
+              }}
+              variant='link'
+              key={item.path + i}
+              as={Link}
+              href={item.path}
+              fontSize='18px'
+            >
+              {item.text}
+            </Button>
+          ))}
+        </HStack>
+        <Searchbar />
       </HStack>
     </Box>
   );
