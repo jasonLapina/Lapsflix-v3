@@ -1,6 +1,7 @@
 import { Box, Button, HStack, Input, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import Searchbar from "./Searchbar";
+import CategoryMenu from "./CategoryMenu";
 function NavBar() {
   const navItems = [
     {
@@ -52,7 +53,9 @@ function NavBar() {
               {item.text}
             </Button>
           ))}
+          <CategoryMenu />
         </HStack>
+
         <Searchbar />
       </HStack>
     </Box>
