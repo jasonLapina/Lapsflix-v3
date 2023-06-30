@@ -6,8 +6,11 @@ function index({ movies }) {
   return (
     <VStack gap='40px'>
       <MovieCarousel title={"In theaters"} movies={movies.nowPlaying} />
-      <MovieCarousel title={"Top Rated"} movies={movies.topRated} />
-      <MovieCarousel title={"Upcoming"} movies={movies.upcoming} />
+      <MovieCarousel title={"Top Rated Movies"} movies={movies.topRated} />
+      <MovieCarousel title={"Upcoming Movies"} movies={movies.upcoming} />
+      <MovieCarousel title={"On Air TV"} movies={movies.tvToday} />
+      <MovieCarousel title={"Top Rated Series"} movies={movies.tvTopRated} />
+      <MovieCarousel title={"Upcoming series"} movies={movies.tvUpcoming} />
     </VStack>
   );
 }

@@ -16,6 +16,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import movieGenres from "../../data/movieGenres.json";
+import tvGenres from "../../data/tvGenres.json";
 import { closeModal } from "../../shared/modalStore";
 function MovieModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -35,6 +36,7 @@ function MovieModal() {
   };
 
   const {
+    name,
     title,
     overview,
     backdrop_path,
@@ -49,9 +51,17 @@ function MovieModal() {
     if (vote_average >= 7.5) return "ForestGreen";
   };
 
-  const genreNames = movieGenres
-    .filter((item) => genre_ids.includes(item.id))
-    .map((item) => item.name);
+  const genreNames = () => {
+    if (!name)
+      return movieGenres
+        .filter((item) => genre_ids.includes(item.id))
+        .map((item) => item.name);
+
+    if (!title)
+      return tvGenres
+        .filter((item) => genre_ids.includes(item.id))
+        .map((item) => item.name);
+  };
 
   return (
     <>
@@ -64,9 +74,9 @@ function MovieModal() {
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>
-            <Text fontSize='32px'>{title}</Text>
+            <Text fontSize='32px'>{title || name}</Text>
             <HStack gap='8px'>
-              {genreNames.map((genre, i) => (
+              {genreNames().map((genre, i) => (
                 <Text fontSize='18px' fontWeight='normal' key={genre}>
                   {genre}
                   {i === genre_ids.length - 1 ? "" : ","}

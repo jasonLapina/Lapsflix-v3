@@ -4,6 +4,7 @@ const initialState = {
   isOpen: false,
   movie: {
     title: "",
+    name: "",
     poster_path: "",
     id: "",
     genre_ids: [],
