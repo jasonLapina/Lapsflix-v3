@@ -8,11 +8,11 @@ function NavBar() {
     },
     {
       text: "Movies",
-      path: "/",
+      path: "/movies",
     },
     {
       text: "TV",
-      path: "/",
+      path: "/tv",
     },
   ];
 
