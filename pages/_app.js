@@ -5,15 +5,20 @@ import "slick-carousel/slick/slick-theme.css";
 import "../styles/carousel.css";
 import { Provider } from "react-redux";
 import { modalStore } from "../shared/modalStore";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const client = new QueryClient();
 
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider>
-      <Provider store={modalStore}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </Provider>
+      <QueryClientProvider client={client}>
+        <Provider store={modalStore}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </Provider>
+      </QueryClientProvider>
     </ChakraProvider>
   );
 }

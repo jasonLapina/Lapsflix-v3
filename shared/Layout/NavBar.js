@@ -28,7 +28,6 @@ function NavBar() {
       left='50%'
       transform='translateX(-50%)'
       px='32px'
-      py='6px'
       opacity='.7'
       _hover={{ opacity: 1 }}
       transition='all .4s'

@@ -2,18 +2,20 @@ import { Box, useDisclosure } from "@chakra-ui/react";
 import NavBar from "./NavBar";
 import MovieModal from "../../components/Movies/MovieModal";
 import { useEffect, useRef } from "react";
+import { useRouter } from "next/router";
 
 function Layout({ children }) {
   const videoRef = useRef(null);
-
   const childRef = useRef(null);
-  useEffect(() => {
-    setTimeout(() => {
-      videoRef.current.style.transform = "translateY(-120%)";
-      videoRef.current.style.opacity = 0;
-      childRef.current.style.marginTop = "-800px";
-    }, 5000);
-  }, []);
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     if (!videoRef.current.style) return;
+  //     videoRef.current.style.transform = "translateY(-120%)";
+  //     videoRef.current.style.opacity = 0;
+  //     childRef.current.style.marginTop = "-800px";
+  //   }, 5000);
+  // }, []);
 
   return (
     <Box minH='100vh' bgColor='black' color='white'>
@@ -27,7 +29,7 @@ function Layout({ children }) {
         px='24px'
         py='80px'
       >
-        <Box
+        {/* <Box
           ref={videoRef}
           mb='80px'
           transition='all .4s'
@@ -39,7 +41,8 @@ function Layout({ children }) {
           mx='auto'
         >
           <source src='/videoBg.mp4' />
-        </Box>
+        </Box> */}
+
         <Box transition='all .4s' ref={childRef}>
           {children}
         </Box>

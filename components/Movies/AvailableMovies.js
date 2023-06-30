@@ -10,8 +10,8 @@ function AvailableMovies({ movies }) {
       justifyContent='center'
       justifyItems='center'
     >
-      {movies.map((item) => {
-        return <MovieItem key={item.id} movie={item} />;
+      {movies.map((item, i) => {
+        return <MovieItem key={item.id + i} movie={item} />;
       })}
     </Grid>
   );
