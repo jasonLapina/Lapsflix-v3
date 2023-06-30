@@ -55,7 +55,6 @@ function NavBar() {
           ))}
           <CategoryMenu />
         </HStack>
-
         <Searchbar />
       </HStack>
     </Box>

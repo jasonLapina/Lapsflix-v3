@@ -4,7 +4,7 @@ import MovieCarousel from "../components/Movies/MovieCarousel";
 
 function index({ movies }) {
   return (
-    <VStack gap='40px'>
+    <VStack gap='80px'>
       <MovieCarousel title={"In theaters"} movies={movies.nowPlaying} />
       <MovieCarousel title={"Top Rated Movies"} movies={movies.topRated} />
       <MovieCarousel title={"Upcoming Movies"} movies={movies.upcoming} />

@@ -20,12 +20,18 @@ function MovieCarousel({ movies, title }) {
 
   return (
     <Box w='1280px'>
-      <Text ml='8px' w='fit-content' mb='8px' fontSize='24px'>
+      <Text
+        ml='8px'
+        w='fit-content'
+        textShadow='1px 1px coral'
+        mb='8px'
+        fontSize='24px'
+      >
         {title}
       </Text>
       <Box as={Slider} {...settings}>
-        {movies.map((item) => (
-          <MovieItem key={item.id} movie={item} />
+        {movies.map((item, i) => (
+          <MovieItem key={item.id + i} movie={item} />
         ))}
       </Box>
     </Box>

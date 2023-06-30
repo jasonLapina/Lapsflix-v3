@@ -5,8 +5,6 @@ import tvGenres from "../../data/tvGenres.json";
 
 const combinedGenres = Array.from(new Set([...movieGenres, ...tvGenres]));
 
-console.log(combinedGenres);
-
 function CategoryMenu() {
   return (
     <Menu>
@@ -28,13 +26,13 @@ function CategoryMenu() {
         gridTemplateColumns='1fr 1fr 1fr'
         color='black'
       >
-        {combinedGenres.map((item) => (
+        {combinedGenres.map((item, i) => (
           <MenuItem
             _hover={{
               textDecor: "underline",
             }}
             w='fit-content'
-            key={item.id}
+            key={item.id + i}
           >
             {item.name}
           </MenuItem>

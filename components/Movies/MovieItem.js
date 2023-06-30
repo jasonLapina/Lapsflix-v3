@@ -3,14 +3,15 @@ import { BsPlayCircleFill } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { openModal } from "../../shared/modalStore";
 
-function MovieItem({ movie }) {
+function MovieItem(props) {
+  const { movie } = props;
   const dispatch = useDispatch();
   const handleDetails = () => {
     dispatch(openModal(movie));
   };
   return (
     <>
-      <Box role='group' pos='relative' px='8px' key={movie.id}>
+      <Box role='group' pos='relative' px='8px' {...props}>
         <Image
           cursor='pointer'
           loading='lazy'

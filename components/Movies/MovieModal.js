@@ -77,7 +77,7 @@ function MovieModal() {
             <Text fontSize='32px'>{title || name}</Text>
             <HStack gap='8px'>
               {genreNames().map((genre, i) => (
-                <Text fontSize='18px' fontWeight='normal' key={genre}>
+                <Text fontSize='18px' fontWeight='normal' key={genre + i}>
                   {genre}
                   {i === genre_ids.length - 1 ? "" : ","}
                 </Text>
