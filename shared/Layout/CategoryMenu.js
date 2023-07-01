@@ -18,7 +18,7 @@ function CategoryMenu({ type }) {
         as={Button}
         rightIcon={<ChevronDownIcon transform='translate(-3px,3px)' />}
       >
-        {type} Genres
+        {type}
       </MenuButton>
       <MenuList
         display='grid'
@@ -27,6 +27,16 @@ function CategoryMenu({ type }) {
         gridTemplateColumns='1fr 1fr 1fr'
         color='black'
       >
+        <MenuItem
+          _hover={{
+            textDecor: "underline",
+          }}
+          w='fit-content'
+          as={Link}
+          href={type === "Movie" ? "/movies" : "/tv"}
+        >
+          All
+        </MenuItem>
         {genresList.map((item, i) => (
           <MenuItem
             _hover={{

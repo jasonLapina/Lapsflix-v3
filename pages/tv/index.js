@@ -6,7 +6,7 @@ function index({ series }) {
   return (
     <Box>
       <Heading textAlign='center' mb='40px'>
-        Discover TV Series
+        Discover Series
       </Heading>
       <AvailableMovies movies={series} />;
     </Box>

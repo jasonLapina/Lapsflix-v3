@@ -2,21 +2,48 @@ import { Box, Button, HStack, Input, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import Searchbar from "./Searchbar";
 import CategoryMenu from "./CategoryMenu";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+
+import movieGenres from "../../data/movieGenres.json";
+import tvGenres from "../../data/tvGenres.json";
+
 function NavBar() {
+  const router = useRouter();
+  const { pathname, query } = router;
+
+  const [displayPath, setDisplayPath] = useState(false);
+  const [formattedPath, setFormattedPath] = useState("");
+
   const navItems = [
     {
       text: "Home",
       path: "/",
     },
-    {
-      text: "Movies",
-      path: "/movies",
-    },
-    {
-      text: "TV",
-      path: "/tv",
-    },
   ];
+
+  useEffect(() => {
+    console.log(query);
+    if (pathname !== "/") {
+      setDisplayPath(true);
+      if (query && pathname.startsWith("/movies")) {
+        const genreName = movieGenres.find(
+          (item) => String(item.id) === query.movieGenre
+        )?.name;
+
+        setFormattedPath(genreName + " in movies");
+      }
+
+      switch (pathname) {
+        case "/movies":
+          setFormattedPath("all movies");
+          break;
+        case "/movies":
+          setFormattedPath("all movies");
+          break;
+      }
+    } else setDisplayPath(false);
+  }, [pathname, query]);
 
   return (
     <Box
@@ -55,6 +82,7 @@ function NavBar() {
           <CategoryMenu type={"Movie"} />
           <CategoryMenu type={"Series"} />
         </HStack>
+        {displayPath && <Text>Browsing: {formattedPath}</Text>}
         <Searchbar />
       </HStack>
     </Box>
