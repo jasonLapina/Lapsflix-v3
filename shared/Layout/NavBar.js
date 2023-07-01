@@ -52,7 +52,8 @@ function NavBar() {
               {item.text}
             </Button>
           ))}
-          <CategoryMenu />
+          <CategoryMenu type={"Movie"} />
+          <CategoryMenu type={"Series"} />
         </HStack>
         <Searchbar />
       </HStack>
