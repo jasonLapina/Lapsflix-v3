@@ -23,7 +23,6 @@ function NavBar() {
   ];
 
   useEffect(() => {
-    console.log(query);
     if (pathname !== "/") {
       setDisplayPath(true);
       if (query && pathname.startsWith("/movies")) {

@@ -11,7 +11,10 @@ function InfiniteMovies() {
 
   const { data, isLoading, hasNextPage, fetchNextPage, isError } =
     useInfiniteQuery("movies", ({ pageParam = 2 }) => fetchMovies(pageParam), {
-      getNextPageParam: (lastPage) => lastPage.page + 1,
+      getNextPageParam: (lastPage) => {
+        if (lastPage.page === lastPage.total_pages) return undefined;
+        else return lastPage.page + 1;
+      },
     });
 
   if (isLoading) return <Center>loading</Center>;
