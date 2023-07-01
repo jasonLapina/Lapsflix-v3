@@ -30,16 +30,21 @@ function NavBar() {
         const genreName = movieGenres.find(
           (item) => String(item.id) === query.movieGenre
         )?.name;
-
         setFormattedPath(genreName + " in movies");
+      }
+      if (query && pathname.startsWith("/tv")) {
+        const genreName = tvGenres.find(
+          (item) => String(item.id) === query.tvGenre
+        )?.name;
+        setFormattedPath(genreName + " in series");
       }
 
       switch (pathname) {
         case "/movies":
           setFormattedPath("all movies");
           break;
-        case "/movies":
-          setFormattedPath("all movies");
+        case "/tv":
+          setFormattedPath("all series");
           break;
       }
     } else setDisplayPath(false);
