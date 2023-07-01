@@ -3,9 +3,9 @@ import axiosInstance from "../../shared/axiosInstance";
 import InfiniteScroll from "react-infinite-scroller";
 import { useInfiniteQuery } from "react-query";
 import AvailableMovies from "./AvailableMovies";
-function InfiniteMovies() {
+function InfiniteMovies({ apiURL = "/discover/movie", config = {} }) {
   const fetchMovies = async (page) => {
-    const { data } = await axiosInstance.get(`/discover/movie?page=${page}`);
+    const { data } = await axiosInstance.get(`${apiURL}?page=${page}`, config);
     return data;
   };
 

@@ -2,15 +2,18 @@ import { Box, Heading } from "@chakra-ui/react";
 import genres from "../../data/movieGenres.json";
 import axiosInstance from "../../shared/axiosInstance";
 import AvailableMovies from "../../components/Movies/AvailableMovies";
+import InfiniteMovies from "../../components/Movies/InfiniteMovies";
 
 function MoviesByGenre(props) {
-  const { movies, genreName: genre } = props;
+  const { movies, genreName: genre, genreId: id } = props;
+  const infiniteConfig = {
+    params: { with_genres: id },
+  };
   return (
     <Box>
       <Heading>{genre}</Heading>
-      <Box>
-        <AvailableMovies movies={movies} />
-      </Box>
+      <AvailableMovies movies={movies} />
+      <InfiniteMovies config={infiniteConfig} />
     </Box>
   );
 }
@@ -30,6 +33,7 @@ export async function getStaticProps({ params }) {
     props: {
       movies,
       genreName,
+      genreId,
     },
   };
 }
