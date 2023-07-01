@@ -3,14 +3,22 @@ import genres from "../../data/tvGenres.json";
 import AvailableMovies from "../../components/Movies/AvailableMovies";
 
 import axiosInstance from "../../shared/axiosInstance";
+import InfiniteMovies from "../../components/Movies/InfiniteMovies";
 
 function SeriesByGenre(props) {
-  const { series, genreName } = props;
+  const { series, genreName, genreId: id } = props;
+
+  const infiniteConfig = {
+    params: {
+      with_genres: id,
+    },
+  };
 
   return (
     <Box>
       <Heading>{genreName}</Heading>
       <AvailableMovies movies={series} />
+      <InfiniteMovies apiURL='/discover/tv' config={infiniteConfig} />
     </Box>
   );
 }
@@ -30,6 +38,7 @@ export async function getStaticProps({ params }) {
     props: {
       series,
       genreName,
+      genreId,
     },
   };
 }
