@@ -9,6 +9,11 @@ function MovieItem(props) {
   const handleDetails = () => {
     dispatch(openModal(movie));
   };
+
+  const noimageHandler = (e) => {
+    e.target.src =
+      "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930";
+  };
   return (
     <>
       <Box role='group' pos='relative' px='8px' {...props}>
@@ -21,6 +26,7 @@ function MovieItem(props) {
           _groupHover={{
             filter: "brightness(.6)",
           }}
+          onError={noimageHandler}
         />
 
         <Button
