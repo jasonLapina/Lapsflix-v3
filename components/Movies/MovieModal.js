@@ -85,7 +85,7 @@ function MovieModal() {
             </HStack>
             <Text>
               <Box as='span' color={voteStyling()}>
-                {vote_average * 10}%{" "}
+                {(vote_average * 10).toFixed(0)}%{" "}
               </Box>
               ({vote_count})
             </Text>
