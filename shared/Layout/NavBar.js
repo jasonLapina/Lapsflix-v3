@@ -56,6 +56,7 @@ function NavBar() {
       bgColor='coral'
       w='60vw'
       minW='720px'
+      maxW='1240px'
       borderRadius='20px'
       left='50%'
       transform='translateX(-50%)'
