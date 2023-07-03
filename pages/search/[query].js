@@ -39,7 +39,7 @@ function SearchPage() {
 
   return (
     <Box>
-      <Heading>Search for: {userQuery}</Heading>
+      <Heading mb='24px'>Search for: {userQuery}</Heading>
       <AvailableMovies movies={[...movies.results, ...series.results]} />
       <InfiniteMovies apiURL={`/search/movie`} config={infiniteConfig} />
     </Box>

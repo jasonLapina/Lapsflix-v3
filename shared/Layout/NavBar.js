@@ -88,7 +88,9 @@ function NavBar() {
           <CategoryMenu type={"Movie"} />
           <CategoryMenu type={"Series"} />
         </HStack>
-        {displayPath && <Text>Browsing: {formattedPath}</Text>}
+        {displayPath && !query && <Text>Browsing: {formattedPath}</Text>}
+        {displayPath && query && <Text>Searching: {query.query}</Text>}
+
         <Searchbar />
       </HStack>
     </Box>
