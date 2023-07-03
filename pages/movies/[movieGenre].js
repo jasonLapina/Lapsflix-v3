@@ -7,11 +7,11 @@ import InfiniteMovies from "../../components/Movies/InfiniteMovies";
 function MoviesByGenre(props) {
   const { movies, genreName: genre, genreId: id } = props;
   const infiniteConfig = {
-    params: { with_genres: id },
+    params: { with_genres: String(id) },
   };
   return (
     <Box>
-      <Heading>{genre}</Heading>
+      <Heading mb='24px'>{genre}</Heading>
       <AvailableMovies movies={movies} />
       <InfiniteMovies config={infiniteConfig} />
     </Box>

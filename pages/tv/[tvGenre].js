@@ -10,13 +10,13 @@ function SeriesByGenre(props) {
 
   const infiniteConfig = {
     params: {
-      with_genres: id,
+      with_genres: String(id),
     },
   };
 
   return (
     <Box>
-      <Heading>{genreName}</Heading>
+      <Heading mb='24px'>{genreName}</Heading>
       <AvailableMovies movies={series} />
       <InfiniteMovies apiURL='/discover/tv' config={infiniteConfig} />
     </Box>

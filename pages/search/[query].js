@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 import axiosInstance from "../../shared/axiosInstance";
 import { useRouter } from "next/router";
 import AvailableMovies from "../../components/Movies/AvailableMovies";
+import InfiniteMovies from "../../components/Movies/InfiniteMovies";
 
 function SearchPage() {
   const router = useRouter();
@@ -32,10 +33,15 @@ function SearchPage() {
       </Center>
     );
 
+  const infiniteConfig = {
+    query: userQuery,
+  };
+
   return (
     <Box>
       <Heading>Search for: {userQuery}</Heading>
       <AvailableMovies movies={[...movies.results, ...series.results]} />
+      <InfiniteMovies apiURL={`/search/movie`} config={infiniteConfig} />
     </Box>
   );
 }
