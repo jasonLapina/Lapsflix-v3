@@ -16,10 +16,47 @@ function MovieCarousel({ movies, title }) {
         <ul style={{ margin: "0px" }}> {dots} </ul>
       </div>
     ),
+    responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+    ],
   };
 
   return (
-    <Box w='1280px'>
+    <Box
+      maxW={{
+        base: "320px",
+        sm: "480px",
+        md: "768px",
+        lg: "992px",
+        xl: "1280px",
+      }}
+    >
       <Text
         ml='8px'
         w='fit-content'
