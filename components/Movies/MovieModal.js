@@ -9,8 +9,9 @@ import {
   Text,
   Grid,
   Image,
-  Box,
   HStack,
+  CircularProgress,
+  CircularProgressLabel,
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -84,9 +85,14 @@ function MovieModal() {
               ))}
             </HStack>
             <Text>
-              <Box as='span' color={voteStyling()}>
-                {(vote_average * 10).toFixed(0)}%{" "}
-              </Box>
+              <CircularProgress
+                value={(vote_average * 10).toFixed(0)}
+                color={voteStyling()}
+              >
+                <CircularProgressLabel>
+                  {(vote_average * 10).toFixed(0)}%
+                </CircularProgressLabel>
+              </CircularProgress>
               ({vote_count})
             </Text>
           </ModalHeader>
