@@ -23,9 +23,11 @@ function CategoryMenu({ type }) {
       <MenuList
         display='grid'
         rowGap='8px'
-        columnGap='16px'
-        gridTemplateColumns='1fr 1fr 1fr'
+        columnGap={{ base: "8px", md: "16px" }}
+        gridTemplateColumns={{ base: "1fr 1fr", md: "1fr 1fr 1fr" }}
         color='black'
+        h={{ base: "240px", md: "auto" }}
+        overflow='auto'
       >
         <MenuItem
           _hover={{
@@ -47,7 +49,7 @@ function CategoryMenu({ type }) {
             as={Link}
             href={`/${type === "Movie" ? "movies" : "tv"}/${item.id}`}
           >
-            {item.name}
+            {item.name.split("&")[0]}
           </MenuItem>
         ))}
       </MenuList>
