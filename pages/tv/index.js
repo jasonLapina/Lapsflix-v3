@@ -1,15 +1,21 @@
 import { Box, Heading } from "@chakra-ui/react";
 import AvailableMovies from "../../components/Movies/AvailableMovies";
 import axiosInstance from "../../shared/axiosInstance";
+import Head from "next/head";
 
 function index({ series }) {
   return (
-    <Box>
-      <Heading textAlign='center' mb='40px'>
-        Discover Series
-      </Heading>
-      <AvailableMovies movies={series} />;
-    </Box>
+    <>
+      <Head>
+        <title>LapsFlix | Series</title>
+      </Head>
+      <Box>
+        <Heading textAlign='center' mb='40px'>
+          Discover Series
+        </Heading>
+        <AvailableMovies movies={series} />;
+      </Box>
+    </>
   );
 }
 

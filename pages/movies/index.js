@@ -2,16 +2,20 @@ import axiosInstance from "../../shared/axiosInstance";
 import AvailableMovies from "../../components/Movies/AvailableMovies";
 import { Box, Heading } from "@chakra-ui/react";
 import InfiniteMovies from "../../components/Movies/InfiniteMovies";
+import Head from "next/head";
 
 function Index(props) {
   return (
-    <Box>
-      <Heading textAlign='center' mb='40px'>
-        Discover Movies
-      </Heading>
-      <AvailableMovies movies={props.movies} />
-      <InfiniteMovies />
-    </Box>
+    <>
+      <Head>LapsFlix | Movies</Head>
+      <Box>
+        <Heading textAlign='center' mb='40px'>
+          Discover Movies
+        </Heading>
+        <AvailableMovies movies={props.movies} />
+        <InfiniteMovies />
+      </Box>
+    </>
   );
 }
 
