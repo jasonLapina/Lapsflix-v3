@@ -37,9 +37,16 @@ function Hero() {
       </Heading>
       <ArrowDownIcon
         onClick={() => {
-          document
-            .getElementById("main")
-            .scrollIntoView({ behavior: "smooth" });
+          const element = document.getElementById("main");
+          const offset = -120;
+
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.scrollY + offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
         }}
         cursor='pointer'
         transition='all .4s'

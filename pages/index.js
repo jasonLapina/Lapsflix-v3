@@ -13,8 +13,10 @@ function index({ movies }) {
       </Head>
       <Hero />
       <Layout>
-        <VStack id='main' gap='80px'>
-          <MovieCarousel title={"In theaters"} movies={movies.nowPlaying} />
+        <VStack gap='80px'>
+          <Box id='main'>
+            <MovieCarousel title={"In theaters"} movies={movies.nowPlaying} />
+          </Box>
           <MovieCarousel title={"Top Rated Movies"} movies={movies.topRated} />
           <MovieCarousel title={"Upcoming Movies"} movies={movies.upcoming} />
           <MovieCarousel title={"On Air TV"} movies={movies.tvToday} />
