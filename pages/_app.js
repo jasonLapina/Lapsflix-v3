@@ -8,6 +8,9 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 import { useEffect } from "react";
+import Layout from "../shared/Layout/Layout";
+import Hero from "../components/Home/Hero";
+import Footer from "../shared/Layout/Footer";
 
 const client = new QueryClient();
 
@@ -22,7 +25,11 @@ function MyApp({ Component, pageProps }) {
     <ChakraProvider>
       <QueryClientProvider client={client}>
         <Provider store={modalStore}>
-          <Component {...pageProps} />
+          <Hero />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+          <Footer />
         </Provider>
       </QueryClientProvider>
     </ChakraProvider>

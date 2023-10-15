@@ -1,8 +1,6 @@
 import { ArrowDownIcon } from "@chakra-ui/icons";
 import { Box, Heading } from "@chakra-ui/react";
 
-import { motion, isValidMotionProp } from "framer-motion";
-
 function Hero() {
   return (
     <Box bgColor='#141414' pos='relative'>

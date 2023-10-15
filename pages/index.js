@@ -2,8 +2,6 @@ import { Box, VStack } from "@chakra-ui/react";
 import axiosInstance from "../shared/axiosInstance";
 import MovieCarousel from "../components/Movies/MovieCarousel";
 import Head from "next/head";
-import Hero from "../components/Home/Hero";
-import Layout from "../shared/Layout/Layout";
 
 function index({ movies }) {
   return (
@@ -11,22 +9,16 @@ function index({ movies }) {
       <Head>
         <title>LapsFlix</title>
       </Head>
-      <Hero />
-      <Layout>
-        <VStack gap='80px'>
-          <Box id='main'>
-            <MovieCarousel title={"In theaters"} movies={movies.nowPlaying} />
-          </Box>
-          <MovieCarousel title={"Top Rated Movies"} movies={movies.topRated} />
-          <MovieCarousel title={"Upcoming Movies"} movies={movies.upcoming} />
-          <MovieCarousel title={"On Air TV"} movies={movies.tvToday} />
-          <MovieCarousel
-            title={"Top Rated Series"}
-            movies={movies.tvTopRated}
-          />
-          <MovieCarousel title={"Upcoming series"} movies={movies.tvUpcoming} />
-        </VStack>
-      </Layout>
+      <VStack gap='80px'>
+        <Box id='main'>
+          <MovieCarousel title={"In theaters"} movies={movies.nowPlaying} />
+        </Box>
+        <MovieCarousel title={"Top Rated Movies"} movies={movies.topRated} />
+        <MovieCarousel title={"Upcoming Movies"} movies={movies.upcoming} />
+        <MovieCarousel title={"On Air TV"} movies={movies.tvToday} />
+        <MovieCarousel title={"Top Rated Series"} movies={movies.tvTopRated} />
+        <MovieCarousel title={"Upcoming series"} movies={movies.tvUpcoming} />
+      </VStack>
     </>
   );
 }
