@@ -30,14 +30,28 @@ function MobileNav() {
   ];
 
   return (
-    <>
+    <Box
+      pos='sticky'
+      top='0'
+      zIndex={99}
+      bgImage={
+        "linear-gradient(to-r, rgba(220,60,20,.3),rgba(103, 242, 209,.3))"
+      }
+      backdropFilter='auto'
+      backdropBlur='10px'
+    >
       <HStack px='16px' py='8px' justifyContent='space-between' w='100%'>
         <Icon fontSize='24px' onClick={onOpen} as={RxHamburgerMenu} />
         <Searchbar />
       </HStack>
       <Drawer isOpen={isOpen} placement='left' onClose={onClose}>
         <DrawerOverlay />
-        <DrawerContent bgColor='whiteAlpha.900'>
+        <DrawerContent
+          color='cyan'
+          bgColor='rgba(220,60,20,.3)'
+          backdropFilter='auto'
+          backdropBlur='10px'
+        >
           <DrawerCloseButton />
           <DrawerHeader>Menu</DrawerHeader>
 
@@ -61,7 +75,7 @@ function MobileNav() {
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
-    </>
+    </Box>
   );
 }
 

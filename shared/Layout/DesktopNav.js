@@ -53,7 +53,10 @@ function DesktopNav() {
     <Box
       pos='fixed'
       top='16px'
-      bgColor='rgba(220,20,60,.3)'
+      // bgColor='rgba(255,255,255,.3)'
+      bgImage={
+        "linear-gradient(to-r, rgba(220,60,20,.3),rgba(103, 242, 209,.3))"
+      }
       backdropFilter='auto'
       backdropBlur='15px'
       w='60vw'
