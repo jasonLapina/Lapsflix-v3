@@ -1,5 +1,4 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import Layout from "../shared/Layout/Layout";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/carousel.css";
@@ -14,9 +13,7 @@ function MyApp({ Component, pageProps }) {
     <ChakraProvider>
       <QueryClientProvider client={client}>
         <Provider store={modalStore}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          <Component {...pageProps} />
         </Provider>
       </QueryClientProvider>
     </ChakraProvider>
