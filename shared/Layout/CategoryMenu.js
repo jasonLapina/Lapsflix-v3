@@ -32,6 +32,7 @@ function CategoryMenu({ type }) {
         <MenuItem
           _hover={{
             textDecor: "underline",
+            color: "crimson",
           }}
           w='fit-content'
           as={Link}
@@ -43,6 +44,7 @@ function CategoryMenu({ type }) {
           <MenuItem
             _hover={{
               textDecor: "underline",
+              color: "crimson",
             }}
             w='fit-content'
             key={item.id + i}
