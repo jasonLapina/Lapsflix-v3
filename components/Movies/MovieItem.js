@@ -32,15 +32,21 @@ function MovieItem(props) {
         <Button
           transition='all .4s'
           pos='absolute'
-          bottom='8px'
+          bottom='-110px'
           left='16px'
-          opacity={0}
+          // opacity={0}
           _groupHover={{
             bottom: "16px",
             opacity: 1,
           }}
-          bgColor='crimson'
+          bgColor='rgba(220,20,60,.4)'
+          backdropFilter='auto'
+          backdropBlur='10px'
           onClick={handleDetails}
+          color='white'
+          _hover={{
+            bgColor: "crimson",
+          }}
         >
           Details
         </Button>
