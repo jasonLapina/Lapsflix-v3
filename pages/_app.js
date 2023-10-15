@@ -9,12 +9,15 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 import { useEffect } from "react";
 import Layout from "../shared/Layout/Layout";
-import Hero from "../components/Home/Hero";
 import Footer from "../shared/Layout/Footer";
+import { useRouter } from "next/router";
 
 const client = new QueryClient();
 
 function MyApp({ Component, pageProps }) {
+  const route = useRouter();
+  console.log(route.pathname);
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -25,10 +28,12 @@ function MyApp({ Component, pageProps }) {
     <ChakraProvider>
       <QueryClientProvider client={client}>
         <Provider store={modalStore}>
-          <Hero />
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          {route.pathname !== "/" && (
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          )}
+          {route.pathname === "/" && <Component {...pageProps} />}
           <Footer />
         </Provider>
       </QueryClientProvider>
