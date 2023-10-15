@@ -36,5 +36,5 @@
 }
 .slick-dots li.slick-active button::before {
   opacity: 1;
-  color: coral;
+  color: crimson;
 }

@@ -60,7 +60,7 @@ function MovieCarousel({ movies, title }) {
       <Text
         ml='8px'
         w='fit-content'
-        textShadow='1px 1px coral'
+        textShadow='1px 1px crimson'
         mb='8px'
         fontSize='24px'
       >

@@ -104,7 +104,7 @@ function MovieModal() {
                 alt={title}
                 src={`https://image.tmdb.org/t/p/w500${backdrop_path}`}
                 loading='lazy'
-                boxShadow='4px 4px coral'
+                boxShadow='4px 4px crimson'
               />
               <Text overflowY='auto' pl='24px'>
                 {overview}

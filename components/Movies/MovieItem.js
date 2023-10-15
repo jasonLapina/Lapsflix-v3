@@ -39,7 +39,7 @@ function MovieItem(props) {
             bottom: "16px",
             opacity: 1,
           }}
-          bgColor='coral'
+          bgColor='crimson'
           onClick={handleDetails}
         >
           Details
@@ -60,7 +60,7 @@ function MovieItem(props) {
             transform='translate(-50%,-50%)'
             fontSize='80px'
             as={BsPlayCircleFill}
-            color='coral'
+            color='crimson'
             _groupHover={{
               top: "50%",
               opacity: 1,

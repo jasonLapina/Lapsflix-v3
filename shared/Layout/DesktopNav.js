@@ -53,7 +53,9 @@ function DesktopNav() {
     <Box
       pos='fixed'
       top='16px'
-      bgColor='coral'
+      bgColor='rgba(220,20,60,.3)'
+      backdropFilter='auto'
+      backdropBlur='15px'
       w='60vw'
       minW='720px'
       maxW='1240px'
@@ -61,13 +63,9 @@ function DesktopNav() {
       left='50%'
       transform='translateX(-50%)'
       px='32px'
-      opacity='.7'
       _hover={{ opacity: 1 }}
       transition='all .4s'
       zIndex={999}
-      _focusWithin={{
-        opacity: 1,
-      }}
     >
       <HStack justifyContent='space-between'>
         <HStack gap='24px'>
