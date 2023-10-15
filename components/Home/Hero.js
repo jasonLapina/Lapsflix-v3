@@ -53,6 +53,7 @@ function Hero() {
         fontSize='80px'
         color='crimson'
         filter='drop-shadow(2px 2px 4px white)'
+        zIndex={11}
       />
     </Box>
   );
