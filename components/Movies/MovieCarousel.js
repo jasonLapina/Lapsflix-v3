@@ -1,5 +1,5 @@
-import { Box, Button, Icon, Image, Text } from "@chakra-ui/react";
-import { BsPlayCircleFill } from "react-icons/bs";
+import { Box, Text } from "@chakra-ui/react";
+
 import Slider from "react-slick";
 import MovieItem from "./MovieItem";
 

@@ -18,7 +18,7 @@ function Layout({ children }) {
   // }, []);
 
   return (
-    <Box minH='100vh' bgColor='black' color='white'>
+    <Box minH='100vh' bgColor='#141414' color='white'>
       <MovieModal />
       <NavBar />
       <Box

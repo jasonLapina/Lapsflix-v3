@@ -25,7 +25,7 @@ function CategoryMenu({ type }) {
         rowGap='8px'
         columnGap={{ base: "8px", md: "16px" }}
         gridTemplateColumns={{ base: "1fr 1fr", md: "1fr 1fr 1fr" }}
-        color='black'
+        color='#141414'
         h={{ base: "240px", md: "auto" }}
         overflow='auto'
       >
