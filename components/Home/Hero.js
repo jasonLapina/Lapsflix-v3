@@ -1,5 +1,5 @@
 import { ArrowDownIcon } from "@chakra-ui/icons";
-import { Box, HStack, Heading, Text, chakra } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 
 import { motion, isValidMotionProp } from "framer-motion";
 
@@ -39,10 +39,8 @@ function Hero() {
         onClick={() => {
           const element = document.getElementById("main");
           const offset = -120;
-
           const elementPosition = element.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.scrollY + offset;
-
           window.scrollTo({
             top: offsetPosition,
             behavior: "smooth",
@@ -67,7 +65,3 @@ function Hero() {
 }
 
 export default Hero;
-
-const MotionBox = chakra(motion.div, {
-  shouldForwardProp: isValidMotionProp,
-});

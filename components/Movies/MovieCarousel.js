@@ -56,6 +56,7 @@ function MovieCarousel({ movies, title }) {
         lg: "992px",
         xl: "1280px",
       }}
+      data-aos='fade-up'
     >
       <Text
         ml='8px'

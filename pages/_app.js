@@ -5,10 +5,19 @@ import "../styles/carousel.css";
 import { Provider } from "react-redux";
 import { modalStore } from "../shared/modalStore";
 import { QueryClient, QueryClientProvider } from "react-query";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
+import { useEffect } from "react";
 
 const client = new QueryClient();
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
   return (
     <ChakraProvider>
       <QueryClientProvider client={client}>
