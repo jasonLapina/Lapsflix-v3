@@ -32,9 +32,10 @@ function MovieItem(props) {
         <Button
           transition='all .4s'
           pos='absolute'
-          bottom='-110px'
+          bottom='0px'
+          // bottom='-110px'
           left='16px'
-          // opacity={0}
+          opacity={0}
           _groupHover={{
             bottom: "16px",
             opacity: 1,
